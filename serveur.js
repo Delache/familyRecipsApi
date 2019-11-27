@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 
-// Routes User
+// Routes Users
 app.get('/api/users', (req, res) => {
   connection.query('SELECT * from user', (err, results) => {
     if (err) {
@@ -58,6 +58,16 @@ app.delete('/api/users/:id', (req, res) => {
   });
 });
 
+// Routes Dish
+app.get('/api/dishs', (req, res) => {
+  connection.query('SELECT * from dish', (err, results) => {
+    if (err) {
+      res.status(500).send('Erreur lors de la récupération des employés');
+    } else {
+      res.json(results);
+    }
+  });
+})
 
 app.listen(port, (err) => {
   if (err) {
