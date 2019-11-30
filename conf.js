@@ -6,3 +6,4 @@ password :  process.env.secret, // le mot de passe
 database :  'family_recips' // le nom de la base de données
 });
 module.exports = connection;
+
