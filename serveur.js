@@ -101,7 +101,7 @@ app.get('/api/recips/soup', (req, res) => {
 app.get('/api/recips/pies', (req, res) => {
   connection.query("SELECT * from recip where recip.name like 'tarte%'", (err, results) => {
     if (err) {
-      res.status(500).send('Erreur lors de la récupération des recettes de tarte)
+      res.status(500).send('Erreur lors de la récupération des recettes de tarte')
     } else {
       res.json(results);
     }
